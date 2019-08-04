@@ -12,6 +12,13 @@
 		3E195C4022F7936600DEAA0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E195C3E22F7936600DEAA0B /* Main.storyboard */; };
 		3E195C4222F7936800DEAA0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E195C4122F7936800DEAA0B /* Assets.xcassets */; };
 		3E195C4522F7936800DEAA0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E195C4322F7936800DEAA0B /* LaunchScreen.storyboard */; };
+		3E195C5D22F795D000DEAA0B /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E195C5C22F795D000DEAA0B /* ServiceManager.swift */; };
+		3E195C6022F7960D00DEAA0B /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E195C5F22F7960D00DEAA0B /* Model.swift */; };
+		3E195C6322F7990000DEAA0B /* ModelServiceUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E195C6222F7990000DEAA0B /* ModelServiceUser.swift */; };
+		3E195C6522F7991E00DEAA0B /* ModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E195C6422F7991E00DEAA0B /* ModelService.swift */; };
+		3E195C6722F79A4E00DEAA0B /* ModelServiceSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E195C6622F79A4E00DEAA0B /* ModelServiceSearchResult.swift */; };
+		3E195C6922F7A12F00DEAA0B /* ModelServiceSearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E195C6822F7A12F00DEAA0B /* ModelServiceSearchItem.swift */; };
+		3E195C6B22F7A13900DEAA0B /* ModelServiceSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E195C6A22F7A13900DEAA0B /* ModelServiceSearch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +29,13 @@
 		3E195C4122F7936800DEAA0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E195C4422F7936800DEAA0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E195C4E22F794C400DEAA0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E195C5C22F795D000DEAA0B /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		3E195C5F22F7960D00DEAA0B /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		3E195C6222F7990000DEAA0B /* ModelServiceUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelServiceUser.swift; sourceTree = "<group>"; };
+		3E195C6422F7991E00DEAA0B /* ModelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelService.swift; sourceTree = "<group>"; };
+		3E195C6622F79A4E00DEAA0B /* ModelServiceSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelServiceSearchResult.swift; sourceTree = "<group>"; };
+		3E195C6822F7A12F00DEAA0B /* ModelServiceSearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelServiceSearchItem.swift; sourceTree = "<group>"; };
+		3E195C6A22F7A13900DEAA0B /* ModelServiceSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelServiceSearch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +68,8 @@
 		3E195C3922F7936600DEAA0B /* bitpanda test */ = {
 			isa = PBXGroup;
 			children = (
+				3E195C5E22F795F700DEAA0B /* Model */,
+				3E195C5B22F795D000DEAA0B /* Service */,
 				3E195C3A22F7936600DEAA0B /* AppDelegate.swift */,
 				3E195C3C22F7936600DEAA0B /* ViewController.swift */,
 				3E195C3E22F7936600DEAA0B /* Main.storyboard */,
@@ -78,6 +94,35 @@
 				3E195C4E22F794C400DEAA0B /* Info.plist */,
 			);
 			path = "bitpanda test";
+			sourceTree = "<group>";
+		};
+		3E195C5B22F795D000DEAA0B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3E195C5C22F795D000DEAA0B /* ServiceManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		3E195C5E22F795F700DEAA0B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3E195C5F22F7960D00DEAA0B /* Model.swift */,
+				3E195C6122F7961900DEAA0B /* Service */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3E195C6122F7961900DEAA0B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3E195C6422F7991E00DEAA0B /* ModelService.swift */,
+				3E195C6222F7990000DEAA0B /* ModelServiceUser.swift */,
+				3E195C6A22F7A13900DEAA0B /* ModelServiceSearch.swift */,
+				3E195C6822F7A12F00DEAA0B /* ModelServiceSearchItem.swift */,
+				3E195C6622F79A4E00DEAA0B /* ModelServiceSearchResult.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,7 +197,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E195C3D22F7936600DEAA0B /* ViewController.swift in Sources */,
+				3E195C6522F7991E00DEAA0B /* ModelService.swift in Sources */,
 				3E195C3B22F7936600DEAA0B /* AppDelegate.swift in Sources */,
+				3E195C6322F7990000DEAA0B /* ModelServiceUser.swift in Sources */,
+				3E195C5D22F795D000DEAA0B /* ServiceManager.swift in Sources */,
+				3E195C6722F79A4E00DEAA0B /* ModelServiceSearchResult.swift in Sources */,
+				3E195C6B22F7A13900DEAA0B /* ModelServiceSearch.swift in Sources */,
+				3E195C6922F7A12F00DEAA0B /* ModelServiceSearchItem.swift in Sources */,
+				3E195C6022F7960D00DEAA0B /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
