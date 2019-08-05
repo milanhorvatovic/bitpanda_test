@@ -36,6 +36,14 @@
 		3E195C9122F7AAF300DEAA0B /* RepositoryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E195C9022F7AAF300DEAA0B /* RepositoryListCell.swift */; };
 		3E195C9322F7ABA200DEAA0B /* RepositoryListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E195C9222F7ABA200DEAA0B /* RepositoryListCell.xib */; };
 		3E195C9622F7C2FA00DEAA0B /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E195C9522F7C2FA00DEAA0B /* Sequence.swift */; };
+		3E195C9E22F8118800DEAA0B /* RepositoryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E195C9822F8118800DEAA0B /* RepositoryDetailViewModel.swift */; };
+		3E195C9F22F8118800DEAA0B /* RepositoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E195C9922F8118800DEAA0B /* RepositoryDetailViewController.swift */; };
+		3E195CA022F8118800DEAA0B /* RepositoryDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E195C9A22F8118800DEAA0B /* RepositoryDetailCell.xib */; };
+		3E195CA122F8118800DEAA0B /* RepositoryDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E195C9B22F8118800DEAA0B /* RepositoryDetailCell.swift */; };
+		3E195CA222F8118800DEAA0B /* RepositoryDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E195C9C22F8118800DEAA0B /* RepositoryDetailCoordinator.swift */; };
+		3E195CA322F8118800DEAA0B /* RepositoryDetailCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E195C9D22F8118800DEAA0B /* RepositoryDetailCellModel.swift */; };
+		3E195CA522F8253D00DEAA0B /* ModelServiceStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E195CA422F8253D00DEAA0B /* ModelServiceStats.swift */; };
+		3E195CA722F8255900DEAA0B /* ModelServiceStatsContributor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E195CA622F8255900DEAA0B /* ModelServiceStatsContributor.swift */; };
 		837042F1052057F94918626F /* Pods_bitpanda_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D841C537C701591BB04A5B3 /* Pods_bitpanda_test.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +81,14 @@
 		3E195C9022F7AAF300DEAA0B /* RepositoryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListCell.swift; sourceTree = "<group>"; };
 		3E195C9222F7ABA200DEAA0B /* RepositoryListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryListCell.xib; sourceTree = "<group>"; };
 		3E195C9522F7C2FA00DEAA0B /* Sequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sequence.swift; sourceTree = "<group>"; };
+		3E195C9822F8118800DEAA0B /* RepositoryDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryDetailViewModel.swift; sourceTree = "<group>"; };
+		3E195C9922F8118800DEAA0B /* RepositoryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryDetailViewController.swift; sourceTree = "<group>"; };
+		3E195C9A22F8118800DEAA0B /* RepositoryDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepositoryDetailCell.xib; sourceTree = "<group>"; };
+		3E195C9B22F8118800DEAA0B /* RepositoryDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryDetailCell.swift; sourceTree = "<group>"; };
+		3E195C9C22F8118800DEAA0B /* RepositoryDetailCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryDetailCoordinator.swift; sourceTree = "<group>"; };
+		3E195C9D22F8118800DEAA0B /* RepositoryDetailCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryDetailCellModel.swift; sourceTree = "<group>"; };
+		3E195CA422F8253D00DEAA0B /* ModelServiceStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelServiceStats.swift; sourceTree = "<group>"; };
+		3E195CA622F8255900DEAA0B /* ModelServiceStatsContributor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelServiceStatsContributor.swift; sourceTree = "<group>"; };
 		85B3C7215288AA5F3C9AA9A7 /* Pods-bitpanda test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bitpanda test.debug.xcconfig"; path = "Target Support Files/Pods-bitpanda test/Pods-bitpanda test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -174,6 +190,8 @@
 				3E195C6A22F7A13900DEAA0B /* ModelServiceSearch.swift */,
 				3E195C6822F7A12F00DEAA0B /* ModelServiceSearchItem.swift */,
 				3E195C6622F79A4E00DEAA0B /* ModelServiceSearchResult.swift */,
+				3E195CA422F8253D00DEAA0B /* ModelServiceStats.swift */,
+				3E195CA622F8255900DEAA0B /* ModelServiceStatsContributor.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -239,6 +257,7 @@
 				3E195C8422F7A71A00DEAA0B /* RepositoryViewModel.swift */,
 				3E195C8E22F7A9A800DEAA0B /* RepositoryModel.swift */,
 				3E195C8122F7A6DF00DEAA0B /* List */,
+				3E195C9722F8112C00DEAA0B /* Detail */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -262,6 +281,19 @@
 				3E195C9522F7C2FA00DEAA0B /* Sequence.swift */,
 			);
 			path = Foundation;
+			sourceTree = "<group>";
+		};
+		3E195C9722F8112C00DEAA0B /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				3E195C9C22F8118800DEAA0B /* RepositoryDetailCoordinator.swift */,
+				3E195C9822F8118800DEAA0B /* RepositoryDetailViewModel.swift */,
+				3E195C9922F8118800DEAA0B /* RepositoryDetailViewController.swift */,
+				3E195C9D22F8118800DEAA0B /* RepositoryDetailCellModel.swift */,
+				3E195C9B22F8118800DEAA0B /* RepositoryDetailCell.swift */,
+				3E195C9A22F8118800DEAA0B /* RepositoryDetailCell.xib */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		A4F70C98285C68EFDA76661A /* Frameworks */ = {
@@ -336,6 +368,7 @@
 				3E195C4222F7936800DEAA0B /* Assets.xcassets in Resources */,
 				3E195C4022F7936600DEAA0B /* Main.storyboard in Resources */,
 				3E195C9322F7ABA200DEAA0B /* RepositoryListCell.xib in Resources */,
+				3E195CA022F8118800DEAA0B /* RepositoryDetailCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +424,7 @@
 				3E195C7E22F7A4A700DEAA0B /* Coordinator.swift in Sources */,
 				3E195C7822F7A4A700DEAA0B /* ViewModel.swift in Sources */,
 				3E195C8922F7A74D00DEAA0B /* RepositoryListViewModel.swift in Sources */,
+				3E195CA122F8118800DEAA0B /* RepositoryDetailCell.swift in Sources */,
 				3E195C3D22F7936600DEAA0B /* ViewController.swift in Sources */,
 				3E195C7B22F7A4A700DEAA0B /* ApplicationCoordinator.swift in Sources */,
 				3E195C8F22F7A9A800DEAA0B /* RepositoryModel.swift in Sources */,
@@ -398,10 +432,14 @@
 				3E195C3B22F7936600DEAA0B /* AppDelegate.swift in Sources */,
 				3E195C8D22F7A93F00DEAA0B /* RepositoryListCellModel.swift in Sources */,
 				3E195C6322F7990000DEAA0B /* ModelServiceUser.swift in Sources */,
+				3E195CA222F8118800DEAA0B /* RepositoryDetailCoordinator.swift in Sources */,
 				3E195C5D22F795D000DEAA0B /* ServiceManager.swift in Sources */,
+				3E195CA722F8255900DEAA0B /* ModelServiceStatsContributor.swift in Sources */,
+				3E195C9F22F8118800DEAA0B /* RepositoryDetailViewController.swift in Sources */,
 				3E195C6722F79A4E00DEAA0B /* ModelServiceSearchResult.swift in Sources */,
 				3E195C7922F7A4A700DEAA0B /* CommonViewModel.swift in Sources */,
 				3E195C9622F7C2FA00DEAA0B /* Sequence.swift in Sources */,
+				3E195C9E22F8118800DEAA0B /* RepositoryDetailViewModel.swift in Sources */,
 				3E195C7C22F7A4A700DEAA0B /* CommonCoordinator.swift in Sources */,
 				3E195C6B22F7A13900DEAA0B /* ModelServiceSearch.swift in Sources */,
 				3E195C9122F7AAF300DEAA0B /* RepositoryListCell.swift in Sources */,
@@ -413,6 +451,8 @@
 				3E195C6922F7A12F00DEAA0B /* ModelServiceSearchItem.swift in Sources */,
 				3E195C7D22F7A4A700DEAA0B /* NavigationCoordinator.swift in Sources */,
 				3E195C6022F7960D00DEAA0B /* Model.swift in Sources */,
+				3E195CA322F8118800DEAA0B /* RepositoryDetailCellModel.swift in Sources */,
+				3E195CA522F8253D00DEAA0B /* ModelServiceStats.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

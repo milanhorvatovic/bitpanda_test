@@ -21,6 +21,9 @@ internal protocol CoordinatorProtocol: class {
     
     func start()
     
+    func addChildCoordinator(_ childCoordinator: CoordinatorProtocol)
+    func removeChildCoordinator(_ childCoordinator: CoordinatorProtocol)
+    func removeAllChildrenCoordinator()
 }
 
 extension CoordinatorProtocol {
@@ -33,11 +36,15 @@ extension CoordinatorProtocol {
         self.childCoordinators = self.childCoordinators.filter { $0 !== childCoordinator }
     }
     
+    internal func removeAllChildrenCoordinator() {
+        self.childCoordinators.removeAll()
+    }
+    
 }
 
 extension Coordinator {
     
-    internal class Common: CoordinatorProtocol {
+    internal class Common: NSObject, CoordinatorProtocol {
         
         internal let diContainer: Swinject.Container
         

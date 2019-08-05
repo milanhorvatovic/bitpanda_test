@@ -152,17 +152,12 @@ extension Service.Manager {
     }
     
     @discardableResult
-    internal func contributors(for object: Model.Service.Search.Item, _ closure: @escaping ([Model.Service.User]?, Error?) -> Void) -> Int {
-        let request: URLRequest = { (object: Model.Service.Search.Item) -> URLRequest in
-            guard let url: URL = object.contributorsUrl else {
-                let endpoint: Endpoint = .init(
-                    path: "/repos/\(object.fullName)/contributors"
-                    , queryItems: []
-                )
-                return .init(url: endpoint.url!)
-            }
-            return .init(url: url)
-        }(object)
+    internal func contributors(for object: Model.Service.Search.Item, _ closure: @escaping (Result<[Model.Service.Stats.Contributor]?, AnyError>) -> Void) -> Int {
+        let endpoint: Endpoint = .init(
+            path: "/repos/\(object.fullName)/stats/contributors"
+            , queryItems: []
+        )
+        let request: URLRequest = .init(url: endpoint.url!)
         return self._makeRequest(at: request, closure: closure)
     }
     

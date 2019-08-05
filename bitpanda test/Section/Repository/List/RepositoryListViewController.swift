@@ -114,7 +114,7 @@ internal final class RepositoryListViewController<ViewModelType>: CommonViewCont
             view.translatesAutoresizingMaskIntoConstraints = false
             let label: UILabel = .init()
             label.translatesAutoresizingMaskIntoConstraints = false
-            label.text = "Failed transactions...\nSomething went wrong, try it again."
+            label.text = "Loading failed...\nSomething went wrong, try it again."
             let button: UIButton = .init()
             button.setTitle("Retry", for: .normal)
             let stack: UIStackView = .init(arrangedSubviews: [label, button])
