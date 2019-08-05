@@ -8,14 +8,6 @@
 
 import Foundation
 
-extension Sequence where Iterator.Element: Hashable {
-	
-	public var unique: [Element] {
-		return Array(Set(self))
-	}
-	
-}
-
 extension Sequence where Iterator.Element: Equatable {
 	
 	public var unique: [Element] {
