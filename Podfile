@@ -3,6 +3,7 @@ platform :ios, '12.0'
 target 'bitpanda test' do
   use_frameworks!
 
+  pod 'Strongify', :git => 'https://github.com/milanhorvatovic/Strongify', :branch => 'master'
   pod 'Result', '~> 4.0'
   pod 'ReactiveSwift', '~> 4.0'
   pod 'ReactiveCocoa', '~> 8.0'

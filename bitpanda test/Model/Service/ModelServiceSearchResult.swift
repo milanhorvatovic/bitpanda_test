@@ -26,6 +26,21 @@ extension Model.Service.Search {
     
 }
 
+extension Model.Service.Search.Result {
+    
+    internal static func + (lhs: Model.Service.Search.Result, rhs: Model.Service.Search.Result) -> Model.Service.Search.Result {
+        return .init(totalCount: max(lhs.totalCount, rhs.totalCount), item: (lhs.item + rhs.item).unique)
+    }
+    
+    internal static func + (lhs: Model.Service.Search.Result?, rhs: Model.Service.Search.Result) -> Model.Service.Search.Result {
+        guard let lhs: Model.Service.Search.Result = lhs else {
+            return rhs
+        }
+        return lhs + rhs
+    }
+    
+}
+
 extension Model.Service.Search.Result: Equatable {
     
     internal static func == (lhs: Model.Service.Search.Result, rhs: Model.Service.Search.Result) -> Bool {

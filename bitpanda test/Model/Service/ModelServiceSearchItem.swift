@@ -69,3 +69,18 @@ extension Model.Service.Search.Item: Equatable {
     }
     
 }
+
+extension Model.Service.Search.Item: Hashable {
+    
+    internal func hash(into hasher: inout Hasher) {
+        hasher.combine(self.identifier)
+        hasher.combine(self.owner)
+        hasher.combine(self.fullName)
+        hasher.combine(self.createdAt)
+        hasher.combine(self.size)
+        hasher.combine(self.starsCount)
+        hasher.combine(self.forksCount)
+        hasher.combine(self.contributorsUrlValue)
+    }
+    
+}

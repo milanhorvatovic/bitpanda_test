@@ -8,6 +8,8 @@
 
 import Foundation
 
+import Result
+
 internal enum Service {
     
     internal class Manager {
@@ -75,6 +77,40 @@ internal enum Service {
             return task.taskIdentifier
         }
         
+        fileprivate func _makeRequest<ResponseType>(at request: URLRequest, closure: @escaping (Result<ResponseType?, AnyError>) -> ()) -> Int where ResponseType: Decodable {
+            //print(request)
+            var taskIdentifier: Int = 0
+            let task: URLSessionDataTask = self.session.dataTask(with: request, completionHandler: { [weak self] (data: Data?, response: URLResponse?, error: Error?) in
+                defer {
+                    self?.task.removeValue(forKey: taskIdentifier)
+                }
+                guard case .none = error else {
+                    closure(.init(error: .init(error!)))
+                    return
+                }
+                guard let data: Data = data else {
+                    closure(.init(.none))
+                    return
+                }
+                
+                do {
+                    let decoder: JSONDecoder = .init()
+                    decoder.dateDecodingStrategy = .iso8601
+                    let response: ResponseType = try decoder.decode(ResponseType.self, from: data)
+                    closure(.init(response))
+                }
+                catch {
+                    closure(.init(error: .init(error)))
+                }
+            })
+            taskIdentifier = task.taskIdentifier
+            self.task[taskIdentifier] = task
+            defer {
+                task.resume()
+            }
+            return task.taskIdentifier
+        }
+        
     }
     
 }
@@ -102,7 +138,7 @@ extension Service.Manager {
     }()
     
     @discardableResult
-    internal func page(from page: Int, size pageSize: Int = 25, _ closure: @escaping (Model.Service.Search.Result?, Error?) -> Void) -> Int {
+    internal func page(from page: Int, size pageSize: Int = 25, _ closure: @escaping (Result<Model.Service.Search.Result?, AnyError>) -> Void) -> Int {
         let endpoint: Endpoint = .init(
             path: "/search/repositories"
             , queryItems: [

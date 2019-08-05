@@ -50,3 +50,13 @@ extension Model.Service.User: Equatable {
     }
     
 }
+
+extension Model.Service.User: Hashable {
+    
+    internal func hash(into hasher: inout Hasher) {
+        hasher.combine(self.identifier)
+        hasher.combine(self.login)
+        hasher.combine(self.avatarUrlValue)
+    }
+    
+}

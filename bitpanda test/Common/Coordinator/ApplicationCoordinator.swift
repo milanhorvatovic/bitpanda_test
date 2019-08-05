@@ -28,7 +28,6 @@ extension Coordinator {
         
         private lazy var _navigationController: UINavigationController = {
             let navigationController = UINavigationController()
-            navigationController.isNavigationBarHidden = true
             return navigationController
         }()
         
@@ -40,9 +39,16 @@ extension Coordinator {
         
         internal override func start() {
             super.start()
-            
+         
+            self._showList()
         }
         
+        fileprivate func _showList() {
+            let coordinator: Coordinator.Repository.List = .init(with: self.diContainer, navigation: self._navigationController)
+            self.addChildCoordinator(coordinator)
+            coordinator.start()
+            self.viewController = coordinator.navigationController
+        }
         
     }
     

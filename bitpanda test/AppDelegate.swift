@@ -8,14 +8,47 @@
 
 import UIKit
 
+import Swinject
+import SwinjectAutoregistration
+
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder {
 
-    var window: UIWindow?
+    fileprivate let diContainer: Swinject.Container
+    
+    internal var window: UIWindow?
+    internal var coordinator: Coordinator.Application?
 
+    internal override init() {
+        self.diContainer = .init()
+        
+        super.init()
+    }
 
+}
+
+extension AppDelegate: UIApplicationDelegate {
+
+    internal func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        self.setupDependencies()
+        
+        return true
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        #if DEBUG
+        print(NSHomeDirectory())
+        #endif
+        
+        let window: UIWindow = UIWindow()
+        let coordinator: Coordinator.Application = .init(with: self.diContainer, window: window)
+        coordinator.start()
+        self.coordinator = coordinator
+        self.window = window
+        window.makeKeyAndVisible()
+        
         return true
     }
 
@@ -41,6 +74,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
 }
 
+extension AppDelegate {
+    
+    internal func setupDependencies() {
+        // services
+        self.diContainer.autoregister(Service.Manager.self, initializer: Service.Manager.init)
+        
+        // viewmodels
+        self.diContainer.autoregister(ViewModel.Repository.List.self, initializer: ViewModel.Repository.List.init)
+        
+        // view controllers
+        self.diContainer.register(RepositoryListViewController.self, factory: { (resolver: Swinject.Resolver) -> RepositoryListViewController<ViewModel.Repository.List> in
+            return .init(with: resolver.resolve(ViewModel.Repository.List.self)!)
+        })
+    }
+    
+}
